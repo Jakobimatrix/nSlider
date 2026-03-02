@@ -1,4 +1,4 @@
-# NSlider
+# nSlider
 
 nSlider is a lightweight, dependency-free, multi-handle slider written in plain JavaScript.  
 It supports dynamic ranges, smart ticks, customizable handles, and strict or flexible handle crossing rules.
