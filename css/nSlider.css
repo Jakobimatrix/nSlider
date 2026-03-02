@@ -1,0 +1,156 @@
+.n-slider {
+    position: relative;
+    height: 8px;
+    background: #dee2e6;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.n-slider .handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.n-slider .handle3DBall {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, var(--handle-color, #0d6efd) 60%);
+    box-shadow:
+        inset 0 -3px 6px rgba(0,0,0,0.4),
+        0 4px 6px rgba(0,0,0,0.3);
+}
+
+.n-slider .handle3DDial {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffffff, var(--handle-color, #0d6efd));
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.4),
+        inset 0 -3px 6px rgba(0,0,0,0.5);
+}
+
+.n-slider .handle3DDial::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #ffffff 0%, #00000055 80%);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.n-slider .handleCircle{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--handle-color, #0d6efd);
+}
+
+.n-slider .handleTriangleUp{
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 18px solid var(--handle-color, #0d6efd);
+}
+
+.n-slider .handleTriangleDown{
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 18px solid var(--handle-color, #0d6efd);
+}
+
+.n-slider .handleThinBar{
+    width: 10px;
+    height: 28px;
+    background: var(--handle-color, #0d6efd);
+    border-radius: 2px;
+}
+
+.n-slider .handleThickBar{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 28px;
+    border-radius: 4px;
+
+    background: var(--handle-color, #0d6efd);
+    cursor: pointer;
+}
+
+.n-slider .handleThickBar::before,
+.n-slider .handleThickBar::after{
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.35);
+}
+
+.n-slider .handleThickBar::before{
+    left: 6px;
+}
+
+.n-slider .handleThickBar::after{
+    right: 6px;
+}
+
+.n-slider .handle:hover {
+    filter: brightness(1.15);
+}
+
+
+.n-slider .tooltip {
+    position: absolute;
+    top: 25px;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    background: #282c31;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.n-slider .ticks {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+}
+
+.n-slider .tick {
+    position: absolute;
+    width: 1px;
+    background: #6c757d;
+}
+
+.n-slider .tick.small {
+    height: 6px;
+}
+
+.n-slider .tick.big {
+    height: 12px;
+}
+
+.n-slider .tick-label {
+    position: absolute;
+    top: 14px;
+    transform: translateX(-50%);
+    font-size: 11px;
+}

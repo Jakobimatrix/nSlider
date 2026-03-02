@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/nSlider.css">
+    <script src="js/nSlider.js" type="text/javascript"></script>
+</head>
+<div class="m-4">
+    <h1>Integral Visualization</h1>
+    <p>
+        Use the sliders to adjust the limits of integration for the function f(x) = x^2 - 2. 
+        The area under the curve between the two limits will be shaded but not calculated. 
+        Because its about the sliders, not the math.
+    </p>
+    <p>
+        Observe how you can not move the sliders past each other. 
+        But they can push each other.
+    </p>
+</div>
+<div class="m-4">
+    <div class="m-5t" style="width: 500px;">
+    <div class="n-slider"
+        id="intSlider"
+        handle_crossing="no,nogap"
+        min="-5" max="5"
+        stepsize="0.1">
+        <div class="handle handleTriangleDown" value="-2"></div>
+        <div class="handle handleTriangleDown" value="2" style="--handle-color:red"></div>
+    </div>
+    </div>
+
+    <canvas id="graph" width="500" height="250" class="mt-4 border"></canvas>
+</div>
+<script>
+
+const ctx = document.getElementById("graph").getContext("2d");
+
+function f(x){ return x*x - 2; }
+
+const slider = new NSlider(document.getElementById("intSlider"), values => {
+    const [a,b] = values.map(v => v.value);
+    ctx.clearRect(0,0,500,250);
+
+    for(let x=0;x<500;x++){
+        const realX = (x/500)*10 -5;
+        const y = f(realX);
+        ctx.fillRect(x,125 - y*10,1,1);
+
+        if(realX>=a && realX<=b){
+            ctx.fillStyle="rgba(13,110,253,0.3)";
+            ctx.fillRect(x,125 - y*10,1,y*10);
+            ctx.fillStyle="black";
+        }
+    }
+});
+
+slider.setTooltipPosition("top");
+</script>
+</body>
+</html>
