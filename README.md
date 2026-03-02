@@ -23,6 +23,10 @@ Bootstrap is not required. It is only used in the example files for visual prese
 
 ---
 
+## Live Demo
+
+[<img src="https://gist.github.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/play.svg" alt="click me" height="32" />](https://jakobimatrix.github.io/nSlider/index.html)
+
 ## Basic Usage
 
 ### 1. Include Files
